@@ -8,10 +8,9 @@ import java.time.Duration;
 
 public class CityBankDemo
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
@@ -31,18 +30,24 @@ public class CityBankDemo
         //8.  Enter date as “14/04/2022”
         driver.findElement(By.id("bill-date-long")).click();
 
-        Select year=new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
+        Select year = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
         year.selectByVisibleText("2022");
 
-        Select month=new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+        Select month = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
         month.selectByVisibleText("Apr");
 
         driver.findElement(By.xpath("//a[text()='14']")).click();
 
 
         //9.  Click on Proceed
-        driver.findElement(By.id("agree")).click();
+        // driver.findElement(By.id("agree")).click();
+        driver.findElement(By.xpath("//input[@value='PROCEED']")).click();
         //10.  Get the text and print it “Please accept Terms and Conditions”
+        String actError=driver.findElement(By.xpath("//div[@role='dialog']")).getText();
+        System.out.println(actError);
+        driver.findElement(By.xpath("//button[@class='ui-button ui-corner-all ui-widget']")).click();
+        driver.quit();
 
     }
+
 }
