@@ -30,9 +30,6 @@ public class DemoCityBank
         driver.switchTo().window(windows.get(1));
         driver.findElement(By.xpath("//div[@onclick='ForgotUserID();']")).click();
 
-        ArrayList<String> finalwindow=new ArrayList<>(driver.getWindowHandles());
-        //  System.out.println(windows);
-        driver.switchTo().window(finalwindow.get(1));
 //            5.  Choose Credit Card
         driver.findElement(By.xpath("//a[text()='select your product type']")).click();
         driver.findElement(By.xpath("//a[text()='Credit Card']")).click();
