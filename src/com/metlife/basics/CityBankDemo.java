@@ -42,10 +42,14 @@ public class CityBankDemo
         //9.  Click on Proceed
         // driver.findElement(By.id("agree")).click();
         driver.findElement(By.xpath("//input[@value='PROCEED']")).click();
+       // getting green Text at bottom
+        String greenMsg=driver.findElement(By.xpath("//p[@class='row last otppassword']")).getText();
+        System.out.println(greenMsg);
         //10.  Get the text and print it “Please accept Terms and Conditions”
         String actError=driver.findElement(By.xpath("//div[@role='dialog']")).getText();
         System.out.println(actError);
-        driver.findElement(By.xpath("//button[@class='ui-button ui-corner-all ui-widget']")).click();
+       //closing the dialogue box
+        driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
         driver.quit();
 
     }
