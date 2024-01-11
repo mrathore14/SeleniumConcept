@@ -16,7 +16,7 @@ public class Demo1DBFree
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://www.db4free.net/");
 
-        driver.findElement(By.xpath("//a[@href='/phpMyAdmin']")).click();
+        driver.findElement(By.xpath("//b[contains(text(),'phpMyAdmin')]")).click();
 
         String parentWindowHandle = driver.getWindowHandle();
         driver.findElement(By.linkText("phpMyAdmin")).click();
