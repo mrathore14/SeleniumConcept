@@ -42,6 +42,11 @@ public class Demo1DBFree
         driver.findElement(By.id("input_password")).sendKeys("admin123");
         driver.findElement(By.id("input_go")).click();
         driver.close(); //closing the active child window
+
+        driver.switchTo().window(windows.get(0));
+
+        System.out.println(driver.getTitle());
+
         driver.quit(); //closing the connection
 
     }
