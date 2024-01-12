@@ -17,6 +17,16 @@ public class ArrayListDemo
         arrayList.add(43);
         arrayList.add(23);
         arrayList.add(190);
+        arrayList.remove(1);
+        System.out.println(arrayList);
+        for (int val:arrayList)
+        {
+            if (val>=50)
+            {
+                System.out.println(val);
+            }
+        }
+
 
 
 

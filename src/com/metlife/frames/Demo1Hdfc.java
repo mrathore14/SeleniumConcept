@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Demo
+public class Demo1Hdfc
 {
     public static void main(String[] args)
     {
@@ -18,7 +18,7 @@ public class Demo
         driver.get("https://netbanking.hdfcbank.com/netbanking/");
         driver.switchTo().frame(0);
         driver.findElement(By.xpath("//input[@name='fldLoginUserId']")).sendKeys("john123");
-
+        driver.switchTo().defaultContent();
 
 
     }
