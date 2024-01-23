@@ -16,8 +16,11 @@ public class Demo1Hdfc
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         driver.get("https://netbanking.hdfcbank.com/netbanking/");
-        driver.switchTo().frame(0);
+        //driver.switchTo().frame(0);
+        driver.switchTo().frame(driver.findElement(By.xpath("//frame[@name='login_page']")));
         driver.findElement(By.xpath("//input[@name='fldLoginUserId']")).sendKeys("john123");
+
+        driver.findElement(By.xpath("//a[text()='CONTINUE']")).click();
         driver.switchTo().defaultContent();
 
 
